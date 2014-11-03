@@ -130,7 +130,7 @@ if (in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_
                             . __( 'Bitcoin', 'colapay-woocommerce' )
                             . '</a>'
                             . __( ' using technology from ', 'colapay-woocommerce' )
-                            . '<a href="https://dev.colapay.com" target="_blank">'
+                            . '<a href="https://www.colapay.com" target="_blank">'
                             . __( 'ColaPay', 'colapay-woocommerce' )
                             . '</a>.',
                             'desc_tip' => true
