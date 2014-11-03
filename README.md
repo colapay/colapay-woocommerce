@@ -19,7 +19,7 @@ If your website server have FTP configured, and you have the access authority
 
 1. [Download](https://github.com/bobofzhang/colapay-woocommerce/archive/master.zip) the plugin as a .zip file.
 2. In your wordpress administration console, navigate to Plugins > Add New > Upload Plugin.
-3. Upload the .zip file downloaded in step 1. [Imgur](http://i.imgur.com/yqMnLXZ.jpg)
+3. Upload the .zip file downloaded in step 1. ![Upload](http://i.imgur.com/yqMnLXZ.jpg)
 
 ### Manual
 
@@ -27,8 +27,7 @@ If your website server have FTP configured, and you have the access authority
 2. Copy the .zip file downloaded in step 1 to /path/to/wordpress/wp-content/plugins directory, and unzip it.
 
 ### Common part
-4. In your wordpress adminstration console, navigate to Plugins > Installed Plugins, and then 'Activate'. [Imgur](http://i.imgur.com/hh0Pq0G.jpg)
+4. In your wordpress adminstration console, navigate to Plugins > Installed Plugins, and then 'Activate'. ![Activate](http://i.imgur.com/hh0Pq0G.jpg)
 5. Navigate to WooCommerce > Settings, then click on the Checkout tab at the top of the screen.
 6. Click on ColaPay.
-7. Enter your API Credentials and click on 'Save changes'. [Imgur](http://i.imgur.com/N5AEvec.jpg)
-
+7. Enter your API Credentials and click on 'Save changes'. ![Save](http://i.imgur.com/N5AEvec.jpg)
