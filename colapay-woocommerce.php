@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: colapay-woocommerce
- * Plugin URI: https://github.com/colapay/colapay-woocommerce
+ * Plugin URI: https://github.com/bobofzhang/colapay-woocommerce
  * Description: Accept Bitcoin on your WooCommerce-powered website with ColaPay.
  * Version: 1.0.0
  * Author: ColaPay Inc.
@@ -145,7 +145,14 @@ if (in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_
                         'api_details' => array(
                                 'title' => __('API Credentials', 'colapay-woocommerce'),
                                 'type' => 'title',
-                                'description' => sprintf(__('Enter your API Key & API Secret to use ColaPay payment gateway. Learn how to access your API Credentials from %shere%s.', 'colapay-woocommerce'), '<a href="https://www.colapay.com">', '</a>')
+                                'description' => sprintf(__('Enter your API Key & API Secret & Merchant ID to use ColaPay payment gateway. Learn how to access your API Credentials from %shere%s.', 'colapay-woocommerce'), '<a href="https://www.colapay.com">', '</a>')
+                        ),
+                        'merchant_id' => array(
+                                'title' => __('Merchant ID', 'colapay-woocommerce'),
+                                'type' => 'text',
+                                'description' => __('Get your merchant id from ColaPay', 'colapay-woocommerce'),
+                                'desc_tip' => true,
+                                'default' => ''
                         ),
                         'api_key' => array(
                                 'title' => __('API Key', 'colapay-woocommerce'),
@@ -184,8 +191,9 @@ if (in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_
 
                 $api_key    = $this->get_option('api_key');
                 $api_secret = $this->get_option('api_secret');
+                $merchant   = $this->get_option('merchant_id');
 
-                if ($api_key == '' || $api_secret == '') {
+                if ($api_key == '' || $api_secret == '' || $merchant == '') {
                     $woocommerce->add_error(__('Sorry, but there was an error processing your order. Please try again or try a different payment method. (plugin not configured)', 'colapay-woocommerce'));
                     return;
                 }
@@ -193,8 +201,6 @@ if (in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_
                 $name     = 'Order #' . $order_id;
                 $price    = $order->get_total();
                 $currency = get_woocommerce_currency();
-                // TODO: fix me
-                $merchant = "545128e5f70edfc9698f79b4";
                 $options  = array(
                         'custom_id'          => $order_id,
                         'callback_url'       => $this->modify_url($this->notify_url),
