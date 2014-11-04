@@ -17,13 +17,13 @@ There are two methods to install the plugin:
 
 If your website server have FTP configured, and you have the access authority
 
-1. [Download](https://github.com/bobofzhang/colapay-woocommerce/archive/master.zip) the plugin as a .zip file.
+1. [Download](https://github.com/colapay/colapay-woocommerce/archive/master.zip) the plugin as a .zip file.
 2. In your wordpress administration console, navigate to Plugins > Add New > Upload Plugin.
 3. Upload the .zip file downloaded in step 1. ![Upload](http://i.imgur.com/yqMnLXZ.jpg)
 
 ### Manual
 
-1. [Download](https://github.com/bobofzhang/colapay-woocommerce/archive/master.zip) the plugin as a .zip file.
+1. [Download](https://github.com/colapay/colapay-woocommerce/archive/master.zip) the plugin as a .zip file.
 2. Copy the .zip file downloaded in step 1 to /path/to/wordpress/wp-content/plugins directory, and unzip it.
 
 ### Next steps
