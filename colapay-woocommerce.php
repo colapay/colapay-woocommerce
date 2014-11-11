@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: colapay-woocommerce
- * Plugin URI: https://github.com/bobofzhang/colapay-woocommerce
+ * Plugin URI: https://github.com/colapay/colapay-woocommerce
  * Description: Accept Bitcoin on your WooCommerce-powered website with ColaPay.
  * Version: 1.0.0
  * Author: ColaPay Inc.
@@ -147,13 +147,6 @@ if (in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_
                                 'type' => 'title',
                                 'description' => sprintf(__('Enter your API Key & API Secret & Merchant ID to use ColaPay payment gateway. Learn how to access your API Credentials from %shere%s.', 'colapay-woocommerce'), '<a href="https://www.colapay.com">', '</a>')
                         ),
-                        'merchant_id' => array(
-                                'title' => __('Merchant ID', 'colapay-woocommerce'),
-                                'type' => 'text',
-                                'description' => __('Get your merchant id from ColaPay', 'colapay-woocommerce'),
-                                'desc_tip' => true,
-                                'default' => ''
-                        ),
                         'api_key' => array(
                                 'title' => __('API Key', 'colapay-woocommerce'),
                                 'type' => 'text',
@@ -191,9 +184,8 @@ if (in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_
 
                 $api_key    = $this->get_option('api_key');
                 $api_secret = $this->get_option('api_secret');
-                $merchant   = $this->get_option('merchant_id');
 
-                if ($api_key == '' || $api_secret == '' || $merchant == '') {
+                if ($api_key == '' || $api_secret == '') {
                     $woocommerce->add_error(__('Sorry, but there was an error processing your order. Please try again or try a different payment method. (plugin not configured)', 'colapay-woocommerce'));
                     return;
                 }
@@ -220,7 +212,7 @@ if (in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_
                     if ('yes' == $this->debug) {
                         $this->log->add('colapay', 'Create Colapay client ok');
                     }
-                    $res        = $colapay->create_invoice($name, $price, $currency, $merchant, $options);
+                    $res        = $colapay->create_invoice($name, $price, $currency, $options);
                     if ('yes' == $this->debug) {
                         $this->log->add('colapay', 'Create invoice using colapay client ok');
                         $this->log->add('colapay', 'Colapay response is ' . json_encode($res, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));

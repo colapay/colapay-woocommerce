@@ -60,13 +60,12 @@ class Colapay {
         return $this->_rpc->request( "PUT", $path, $params );
     }
 
-    public function create_invoice( $name, $price, $currency, $merchant, $options = array() ) {
+    public function create_invoice( $name, $price, $currency, $options = array() ) {
         // required parameters
         $params = array(
                 "name" => $name,
                 "price" => $price,
-                "currency" => $currency,
-                "merchant" => $merchant
+                "currency" => $currency
                 );
         // optional parameters
         foreach ( $options as $option => $val ) {
