@@ -30,4 +30,4 @@ If your website server have FTP configured, and you have the access authority
 4. In your wordpress adminstration console, navigate to Plugins > Installed Plugins, and then 'Activate'. ![Activate](http://i.imgur.com/hh0Pq0G.jpg)
 5. Navigate to WooCommerce > Settings, then click on the Checkout tab at the top of the screen.
 6. Click on ColaPay.
-7. Enter your API Credentials and click on 'Save changes'. ![Save](http://i.imgur.com/GMJhGVr.jpg)
+7. Enter your API Credentials and click on 'Save changes'. ![Save](http://i.imgur.com/TDLhpb6.jpg)
